@@ -59,7 +59,7 @@ function createLabelTexture(flavour: Flavour): THREE.CanvasTexture {
       ctx.save();
       ctx.translate(x, 400);
       ctx.rotate(-Math.PI / 2);
-      ctx.fillText("VENARO", 0, 80, 620);
+      ctx.fillText("sodaLYTE", 0, 80, 620);
       ctx.restore();
     }
 

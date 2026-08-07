@@ -6,7 +6,7 @@ import BuyButton from "@/components/BuyButton";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Warum es VENARO gibt: weil Protein bisher nach Pflicht geschmeckt hat. Die Geschichte hinter der Dose.",
+    "Woher der Name sodaLYTE kommt: von einem blauen Stein mit viel Natrium drin. Die Geschichte hinter der Dose.",
 };
 
 export default function UeberUnsPage() {
@@ -15,9 +15,9 @@ export default function UeberUnsPage() {
       <Reveal>
         <p className="text-micro mb-4 text-muted">Über uns</p>
         <h1 className="text-display font-display">
-          Warum es
+          Der Stein
           <br />
-          VENARO gibt.
+          im Namen.
         </h1>
       </Reveal>
 
@@ -35,17 +35,19 @@ export default function UeberUnsPage() {
             Also haben wir gebaut, was wir selbst kaufen wollten. Einen Drink,
             der die Arbeit nach dem Training erledigt – 20 Gramm Protein, die
             Elektrolyte, die beim Schwitzen rausgehen – und dabei schmeckt wie
-            etwas, das man freiwillig trinkt. Kalt, spritzig, aus der Dose.
+            etwas, das man freiwillig trinkt. Kalt, erfrischend, aus der Dose.
             Fertig.
           </p>
         </Reveal>
         <Reveal>
           <p>
-            Den Namen haben wir uns lange erarbeitet. Er sollte sich nicht nach
-            Supplement-Regal anhören und nicht nach Laborprodukt, sondern nach
-            etwas, das neben den großen Marken im Kühlregal stehen darf, ohne
-            zu schreien. VENARO ist kein Versprechen mit Ausrufezeichen. Es ist
-            einfach der Name auf der Dose, die hält, was sie verspricht.
+            Der Name kommt aus dem Mineralienregal, nicht aus dem
+            Getränkeregal: Sodalith ist ein tiefblauer Stein mit ungewöhnlich
+            viel Natrium – genau das, was der Körper nach dem Training wieder
+            braucht. „Soda“ steht für das Mineral, „LYTE“ für Elektrolyte. Mit
+            Limonade oder Sprudel hat das nichts zu tun, sodaLYTE ist still,
+            nicht spritzig – das Logo ist deshalb auch kein Glas mit Blasen,
+            sondern der Stein selbst.
           </p>
         </Reveal>
         <Reveal>
@@ -62,7 +64,7 @@ export default function UeberUnsPage() {
         <BuyButton />
         <Link
           href="/produkte"
-          className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-salbei hover:text-salbei"
+          className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-sodalith hover:text-sodalith"
         >
           Sorten ansehen
         </Link>

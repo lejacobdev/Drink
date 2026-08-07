@@ -5,7 +5,7 @@ export default function NotFound() {
     <div className="flex min-h-screen flex-col items-center justify-center px-5 text-center">
       <p
         aria-hidden
-        className="font-display leading-none text-salbei"
+        className="font-display leading-none text-sodalith"
         style={{ fontSize: "clamp(8rem, 30vw, 24rem)" }}
       >
         404
@@ -18,13 +18,13 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link
           href="/"
-          className="rounded-full bg-salbei px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
+          className="rounded-full bg-sodalith px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
         >
           Zur Startseite
         </Link>
         <Link
           href="/produkte"
-          className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-salbei hover:text-salbei"
+          className="rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-sodalith hover:text-sodalith"
         >
           Sorten ansehen
         </Link>

@@ -63,7 +63,7 @@ export default function SocialProof() {
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <span key={i} className="flex items-center gap-10">
               <span className="font-display text-2xl uppercase text-kreide/70">{item}</span>
-              <span className="h-2 w-2 rounded-full bg-salbei" />
+              <span className="h-2 w-2 rounded-full bg-sodalith" />
             </span>
           ))}
         </div>

@@ -36,8 +36,8 @@ export default function ProdukteClient() {
             aria-pressed={filter === c}
             className={`rounded-full border px-5 py-2 text-sm font-semibold uppercase tracking-wide transition ${
               filter === c
-                ? "border-salbei bg-salbei text-kohle"
-                : "border-white/20 text-kreide hover:border-salbei hover:text-salbei"
+                ? "border-sodalith bg-sodalith text-kohle"
+                : "border-white/20 text-kreide hover:border-sodalith hover:text-sodalith"
             }`}
           >
             {c}

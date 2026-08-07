@@ -1,4 +1,4 @@
-# VENARO – Markenseite
+# sodaLYTE – Markenseite
 
 Elektrolyte + 20 g Protein, fertig gemixt in der Slim-Dose. Diese Repo enthält die
 komplette Markenseite: Next.js (App Router) + TypeScript + Tailwind, dunkles
@@ -101,21 +101,37 @@ die Seite schickt.
 ## Farbsystem
 
 Gedämpfte, erdige Palette statt greller Neonfarben – Basis fast schwarz, ein
-ruhiger Salbeigrün-Akzent, drei gedeckte Sortenfarben:
+ruhiger Sodalith-Blau-Akzent (passend zum Logo-Stein), drei gedeckte
+Sortenfarben:
 
-| Token      | Hex       | Verwendung                          |
-| ---------- | --------- | ------------------------------------ |
-| `kohle`    | `#0B0B0C` | Hintergrund                          |
-| `asphalt`  | `#17171A` | Karten, sekundäre Flächen            |
-| `kreide`   | `#F2F0E9` | Fließtext, Überschriften auf Dunkel  |
-| `salbei`   | `#9CAF88` | primärer Akzent, CTAs, Links         |
-| `beere`    | `#C98FA0` | Sorte Himbeere Blaubeere             |
-| `mango`    | `#D3A06C` | Sorte Mango Maracuja                 |
-| `muted`    | `#8B8B92` | sekundärer Text                      |
+| Token             | Hex       | Verwendung                              |
+| ------------------ | --------- | ---------------------------------------- |
+| `kohle`            | `#0B0B0C` | Hintergrund                              |
+| `asphalt`          | `#17171A` | Karten, sekundäre Flächen                |
+| `kreide`           | `#F2F0E9` | Fließtext, Überschriften auf Dunkel      |
+| `sodalith`         | `#6C89BF` | primärer Akzent, CTAs, Links, Logo-Stein |
+| `sodalith-hell`    | `#9AAED9` | helle Facette im Logo-Stein              |
+| `sodalith-dunkel`  | `#34517F` | dunkle Facette im Logo-Stein             |
+| `beere`            | `#C98FA0` | Sorte Himbeere Blaubeere                 |
+| `mango`            | `#D3A06C` | Sorte Mango Maracuja                     |
+| `muted`            | `#8B8B92` | sekundärer Text                          |
 
 Limette Zitrone hat keinen eigenen Tailwind-Token, sondern nur einen Hex-Wert
 in `src/lib/flavours.ts` (`#B9C08A`), da Sortenfarben dort zentral gepflegt
 werden.
+
+## Logo
+
+Der Sodalith-Stein (`src/components/GemIcon.tsx`) ist handgebaute Inline-SVG,
+kein Icon-Set-Glyph: drei Facetten in hell/mittel/dunkel für die Schliff-Optik,
+zwei feine helle Adern für die Calcit-Maserung des echten Minerals. Die
+Wortmarke (`src/components/Wordmark.tsx`) ist bewusst in gemischter
+Groß-/Kleinschreibung gesetzt ("soda" + `LYTE`) – Klassen mit
+`uppercase`/`text-transform` dürfen nicht auf die Wortmarke angewendet werden,
+sonst geht die Stilisierung verloren (siehe die Korrektur dazu in
+`ComparisonTable.tsx`). `src/components/Logo.tsx` kombiniert Stein und
+Wortmarke für die Nav; im Footer läuft die Wortmarke riesig und zweifarbig
+über die volle Breite.
 
 ## 3D-Dose gegen Bildsequenz tauschen
 
@@ -156,6 +172,10 @@ So läuft der Tausch auf einen vorgerenderten Bildsequenz-Scrubber:
   Sektion selbstständig auf den statischen Fallback
 
 ## Vor dem Livegang ausfüllen / prüfen lassen
+
+**Markenrecht – vor allem anderen klären:**
+- [ ] Der Name "sodaLYTE" wurde bewusst trotz zweier bekannter Risiken gewählt und ist NICHT rechtlich geprüft: (1) mögliche Verwechslungsgefahr mit SodaStream-Marken ("SODA" + Zusatz in Klasse 32, SodaStream ist bekannt für aktive Markenüberwachung); (2) das Wort "soda" kann als irreführend gelten, falls das Produkt nicht kohlensäurehaltig ist (Art. 7 LMIV, § 5 UWG). Vor Druck von Verpackung/Etiketten: Markenrecherche bei DPMA (register.dpma.de), EUIPO TMview und WIPO Global Brand Database in Klasse 32/5, plus Prüfung durch eine Markenanwältin/einen Markenanwalt.
+- [ ] Falls das Produkt tatsächlich kohlensäurehaltig ist: den Hinweis "still, ohne Kohlensäure" auf `/ueber-uns` und in der FAQ entfernen bzw. anpassen.
 
 **Rechtlich (bitte anwaltlich prüfen lassen – die Seiten sind Vorlagen):**
 - [ ] `/impressum`: alle `[PLATZHALTER]` (Firma, Vertretung, Register, USt-ID, MStV-Verantwortliche)

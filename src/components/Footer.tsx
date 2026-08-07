@@ -50,7 +50,7 @@ function NewsletterForm() {
   }
 
   if (state === "done") {
-    return <p className="text-sm text-salbei">Steht. Du hörst von uns.</p>;
+    return <p className="text-sm text-sodalith">Steht. Du hörst von uns.</p>;
   }
 
   if (state === "unconfigured") {
@@ -74,12 +74,12 @@ function NewsletterForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="deine@mail.de"
-        className="w-full rounded-full border border-white/15 bg-asphalt px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none"
+        className="w-full rounded-full border border-white/15 bg-asphalt px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-sodalith focus:outline-none"
       />
       <button
         type="submit"
         disabled={state === "busy"}
-        className="shrink-0 rounded-full bg-salbei px-5 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
+        className="shrink-0 rounded-full bg-sodalith px-5 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
       >
         Los
       </button>
@@ -108,7 +108,7 @@ export default function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm text-kreide/80 transition hover:text-salbei"
+                      className="text-sm text-kreide/80 transition hover:text-sodalith"
                     >
                       {l.label}
                     </Link>
@@ -126,10 +126,10 @@ export default function Footer() {
       {/* Wortmarke riesig über die volle Breite */}
       <div aria-hidden className="select-none px-1 pb-2">
         <p
-          className="font-display text-center uppercase leading-[0.8] text-salbei"
+          className="font-display text-center leading-[0.8] text-kreide"
           style={{ fontSize: "clamp(6rem, 24vw, 24rem)", letterSpacing: "0.02em" }}
         >
-          VENARO
+          soda<span className="text-sodalith">LYTE</span>
         </p>
       </div>
     </footer>

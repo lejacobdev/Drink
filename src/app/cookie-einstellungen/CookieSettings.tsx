@@ -87,7 +87,7 @@ export default function CookieSettings() {
                   setters[cat.key as "statistik" | "marketing"](e.target.checked)
                 }
               />
-              <span className="h-7 w-12 rounded-full bg-white/15 transition peer-checked:bg-salbei peer-disabled:opacity-50" />
+              <span className="h-7 w-12 rounded-full bg-white/15 transition peer-checked:bg-sodalith peer-disabled:opacity-50" />
               <span className="absolute left-1 h-5 w-5 rounded-full bg-kreide transition peer-checked:translate-x-5 peer-checked:bg-kohle" />
             </label>
           </div>
@@ -97,24 +97,24 @@ export default function CookieSettings() {
       <div className="mt-8 flex flex-wrap gap-3">
         <button
           onClick={() => save(statistik, marketing)}
-          className="rounded-full bg-salbei px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
+          className="rounded-full bg-sodalith px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
         >
           Auswahl speichern
         </button>
         <button
           onClick={() => save(true, true)}
-          className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-salbei hover:text-salbei"
+          className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-sodalith hover:text-sodalith"
         >
           Alle akzeptieren
         </button>
         <button
           onClick={() => save(false, false)}
-          className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-salbei hover:text-salbei"
+          className="rounded-full border border-white/25 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-sodalith hover:text-sodalith"
         >
           Alle ablehnen
         </button>
       </div>
-      {saved && <p className="mt-4 text-sm text-salbei">Gespeichert.</p>}
+      {saved && <p className="mt-4 text-sm text-sodalith">Gespeichert.</p>}
     </div>
   );
 }

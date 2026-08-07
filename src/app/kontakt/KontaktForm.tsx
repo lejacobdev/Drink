@@ -4,7 +4,7 @@ import { useState } from "react";
 import { submitKontakt } from "@/lib/forms";
 
 const inputClasses =
-  "w-full rounded-card border border-white/15 bg-asphalt px-5 py-3.5 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none";
+  "w-full rounded-card border border-white/15 bg-asphalt px-5 py-3.5 text-sm text-kreide placeholder:text-muted focus:border-sodalith focus:outline-none";
 
 export default function KontaktForm() {
   const [state, setState] = useState<"idle" | "busy" | "done" | "error" | "unconfigured">(
@@ -28,7 +28,7 @@ export default function KontaktForm() {
 
   if (state === "done") {
     return (
-      <div className="rounded-card border border-salbei/30 bg-salbei/10 p-8">
+      <div className="rounded-card border border-sodalith/30 bg-sodalith/10 p-8">
         <p className="font-display text-2xl uppercase text-kreide">Angekommen.</p>
         <p className="mt-2 text-kreide/80">
           Wir melden uns, meistens innerhalb von zwei Werktagen.
@@ -101,7 +101,7 @@ export default function KontaktForm() {
       <button
         type="submit"
         disabled={state === "busy"}
-        className="rounded-full bg-salbei px-8 py-4 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
+        className="rounded-full bg-sodalith px-8 py-4 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
       >
         {state === "busy" ? "Sendet" : "Abschicken"}
       </button>

@@ -39,7 +39,7 @@ export default function Hero() {
             <br />
             ein Drink.
             <br />
-            <span className="text-salbei">Wirkt wie ein Plan.</span>
+            <span className="text-sodalith">Wirkt wie ein Plan.</span>
           </h1>
         </Reveal>
         <Reveal delay={120}>
@@ -58,7 +58,7 @@ export default function Hero() {
           <BuyButton />
           <Link
             href="/produkte"
-            className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-salbei hover:text-salbei"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-sodalith hover:text-sodalith"
           >
             Sorten ansehen
           </Link>

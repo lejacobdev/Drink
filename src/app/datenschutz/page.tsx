@@ -59,7 +59,7 @@ export default function DatenschutzPage() {
             (Statistik, Marketing) werden erst geladen, nachdem du über den
             Cookie-Banner eingewilligt hast (Art. 6 Abs. 1 lit. a DSGVO, § 25
             TDDDG). Du kannst deine Einwilligung jederzeit unter{" "}
-            <Link href="/cookie-einstellungen" className="underline hover:text-salbei">
+            <Link href="/cookie-einstellungen" className="underline hover:text-sodalith">
               Cookie-Einstellungen
             </Link>{" "}
             ändern oder widerrufen.

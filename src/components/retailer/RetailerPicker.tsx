@@ -17,7 +17,7 @@ import { submitWaitlist } from "@/lib/forms";
  * Einzige erlaubte localStorage-Nutzung der Seite:
  * merkt sich den zuletzt gewählten Händler.
  */
-const LAST_RETAILER_KEY = "pakt-last-retailer";
+const LAST_RETAILER_KEY = "sodalyte-last-retailer";
 
 function readLastRetailer(): string | null {
   try {
@@ -62,7 +62,7 @@ function RetailerCard({
             <Clock className="h-3 w-3" aria-hidden /> bald verfügbar
           </span>
         ) : (
-          <span className="rounded-full bg-salbei/15 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-salbei">
+          <span className="rounded-full bg-sodalith/15 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-sodalith">
             verfügbar
           </span>
         )}
@@ -92,7 +92,7 @@ function RetailerCard({
       target="_blank"
       rel="noopener"
       onClick={() => onPick(retailer)}
-      className="block rounded-card border border-white/10 bg-asphalt p-5 transition hover:border-salbei hover:bg-asphalt/80"
+      className="block rounded-card border border-white/10 bg-asphalt p-5 transition hover:border-sodalith hover:bg-asphalt/80"
     >
       {inner}
     </a>
@@ -121,8 +121,8 @@ function WaitlistForm({ source }: { source: string }) {
 
   if (state === "done") {
     return (
-      <p className="rounded-card border border-salbei/30 bg-salbei/10 p-4 text-sm text-kreide">
-        Steht. Wir melden uns, sobald VENARO bei dir im Regal steht.
+      <p className="rounded-card border border-sodalith/30 bg-sodalith/10 p-4 text-sm text-kreide">
+        Steht. Wir melden uns, sobald sodaLYTE bei dir im Regal steht.
       </p>
     );
   }
@@ -148,12 +148,12 @@ function WaitlistForm({ source }: { source: string }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="deine@mail.de"
-        className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none"
+        className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-sodalith focus:outline-none"
       />
       <button
         type="submit"
         disabled={state === "busy"}
-        className="shrink-0 rounded-full bg-salbei px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
+        className="shrink-0 rounded-full bg-sodalith px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
       >
         {state === "busy" ? "Moment" : "Bescheid sagen"}
       </button>
@@ -227,7 +227,7 @@ export default function RetailerPicker({ variant }: { variant: "sheet" | "page" 
           value={plz}
           onChange={(e) => setPlz(e.target.value.replace(/\D/g, ""))}
           placeholder="PLZ eingeben, Händler in deiner Nähe sehen"
-          className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none"
+          className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-sodalith focus:outline-none"
         />
       </div>
       {isValidPlz(plz) && (

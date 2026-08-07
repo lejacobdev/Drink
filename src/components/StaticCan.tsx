@@ -17,7 +17,7 @@ export default function StaticCan({ flavour, className = "" }: Props) {
       viewBox="0 0 300 560"
       className={className}
       role="img"
-      aria-label={`VENARO Dose ${flavour.name}`}
+      aria-label={`sodaLYTE Dose ${flavour.name}`}
     >
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="0">
@@ -100,7 +100,7 @@ export default function StaticCan({ flavour, className = "" }: Props) {
           letterSpacing: "0.02em",
         }}
       >
-        VENARO
+        sodaLYTE
       </text>
 
       {/* Metall-Glanz über allem */}

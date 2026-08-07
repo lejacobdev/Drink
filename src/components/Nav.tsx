@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import Wordmark from "./Wordmark";
+import Logo from "./Logo";
 import BuyButton from "./BuyButton";
 
 const links = [
@@ -33,8 +33,8 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8">
-        <Link href="/" aria-label="VENARO Startseite" onClick={() => setMobileOpen(false)}>
-          <Wordmark className="text-2xl text-kreide" />
+        <Link href="/" aria-label="sodaLYTE Startseite" onClick={() => setMobileOpen(false)}>
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Hauptnavigation">
@@ -42,7 +42,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm uppercase tracking-widest text-kreide/80 transition hover:text-salbei"
+              className="text-sm uppercase tracking-widest text-kreide/80 transition hover:text-sodalith"
             >
               {l.label}
             </Link>
@@ -72,7 +72,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setMobileOpen(false)}
-              className="py-3 font-display text-3xl uppercase text-kreide transition hover:text-salbei"
+              className="py-3 font-display text-3xl uppercase text-kreide transition hover:text-sodalith"
             >
               {l.label}
             </Link>

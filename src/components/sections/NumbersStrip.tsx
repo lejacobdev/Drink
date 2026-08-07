@@ -52,7 +52,7 @@ export default function NumbersStrip() {
       >
         {numbers.map((n, i) => (
           <div key={n.label} className="text-center">
-            <p className="font-display text-5xl text-salbei md:text-6xl">
+            <p className="font-display text-5xl text-sodalith md:text-6xl">
               <span ref={(el) => { valueRefs.current[i] = el; }}>0{n.suffix}</span>
             </p>
             <p className="text-micro mt-2 text-muted">{n.label}</p>

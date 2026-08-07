@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Wo kaufen",
   description:
-    "Hier findest du VENARO im Handel. PLZ eingeben, Händler in der Nähe sehen oder Bescheid bekommen, sobald wir bei dir im Regal stehen.",
+    "Hier findest du sodaLYTE im Handel. PLZ eingeben, Händler in der Nähe sehen oder Bescheid bekommen, sobald wir bei dir im Regal stehen.",
 };
 
 export default function WoKaufenPage() {
@@ -15,7 +15,7 @@ export default function WoKaufenPage() {
         <p className="text-micro mb-4 text-muted">Wo kaufen</p>
         <h1 className="text-display font-display">Ab ins Regal.</h1>
         <p className="mt-4 max-w-lg text-lg text-kreide/80">
-          VENARO verkauft nicht direkt. Du bekommst uns da, wo du sowieso einkaufst
+          sodaLYTE verkauft nicht direkt. Du bekommst uns da, wo du sowieso einkaufst
           – im Supermarkt, in der Drogerie oder per Lieferdienst.
         </p>
       </Reveal>

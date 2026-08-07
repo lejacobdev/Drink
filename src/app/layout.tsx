@@ -21,8 +21,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "VENARO – Elektrolyte und Protein in einer Dose",
-    template: "%s – VENARO",
+    default: "sodaLYTE – Elektrolyte und Protein in einer Dose",
+    template: "%s – sodaLYTE",
   },
   description:
     "20 g Protein, 500 mg Elektrolyte, null Zucker. Fertig gemixt in der Slim-Dose. Schmeckt wie ein Drink, wirkt wie ein Plan.",

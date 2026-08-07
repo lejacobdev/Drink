@@ -15,7 +15,7 @@ export type ConsentState = {
   timestamp: string;
 };
 
-const COOKIE_NAME = "pakt-consent";
+const COOKIE_NAME = "sodalyte-consent";
 const COOKIE_DAYS = 180;
 
 export function getConsent(): ConsentState | null {

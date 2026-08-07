@@ -17,7 +17,7 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!flavour) return {};
   return {
     title: `${flavour.name}`,
-    description: `VENARO ${flavour.name}: ${flavour.claim} 20 g Protein und 500 mg Elektrolyte pro Dose, null Zucker.`,
+    description: `sodaLYTE ${flavour.name}: ${flavour.claim} 20 g Protein und 500 mg Elektrolyte pro Dose, null Zucker.`,
   };
 }
 
