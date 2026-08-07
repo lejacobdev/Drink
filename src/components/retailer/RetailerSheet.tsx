@@ -39,13 +39,13 @@ export default function RetailerSheet({ onClose }: { onClose: () => void }) {
           <div>
             <h2 className="font-display text-h2">Wo kaufen</h2>
             <p className="mt-2 text-sm text-muted">
-              PAKT gibt es im Handel, nicht bei uns im Shop.
+              VENARO gibt es im Handel, nicht bei uns im Shop.
             </p>
           </div>
           <button
             onClick={onClose}
             aria-label="Schließen"
-            className="rounded-full border border-white/15 p-2 text-kreide transition hover:border-volt hover:text-volt"
+            className="rounded-full border border-white/15 p-2 text-kreide transition hover:border-salbei hover:text-salbei"
           >
             <X className="h-5 w-5" aria-hidden />
           </button>

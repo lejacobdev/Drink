@@ -38,7 +38,7 @@ function Callout({
   return (
     <Reveal delay={delay} className={align === "right" ? "md:text-right" : ""}>
       <div
-        className={`border-volt py-1 ${
+        className={`border-salbei py-1 ${
           align === "right" ? "md:border-r-2 md:pr-5" : "md:border-l-2 md:pl-5"
         } border-l-2 pl-5 md:border-l-0 md:pl-0`}
       >

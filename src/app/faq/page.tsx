@@ -4,29 +4,29 @@ import FaqAccordion, { landingFaq, type FaqItem } from "@/components/FaqAccordio
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Alle Fragen zu PAKT: Inhaltsstoffe, Wirkung, Verfügbarkeit, Lagerung.",
+  description: "Alle Fragen zu VENARO: Inhaltsstoffe, Wirkung, Verfügbarkeit, Lagerung.",
 };
 
 const extraFaq: FaqItem[] = [
   {
-    q: "Für wen ist PAKT gedacht",
+    q: "Für wen ist VENARO gedacht",
     a: "Für alle, die trainieren, Sport machen oder einfach mehr Protein wollen, ohne Pulver anzurühren. Kein Nischen-Supplement, sondern ein Drink fürs Kühlregal.",
   },
   {
-    q: "Wann trinke ich PAKT am besten",
+    q: "Wann trinke ich VENARO am besten",
     a: "Klassisch direkt nach dem Training, wenn Muskeln Protein und der Körper Elektrolyte brauchen. Funktioniert aber genauso in der Mittagspause oder nach dem Radweg zur Uni.",
   },
   {
-    q: "Ist PAKT vegan",
+    q: "Ist VENARO vegan",
     a: "Nein. Wir setzen auf Milchprotein-Isolat, weil es sich am besten löst und komplett schmeckt. Eine pflanzliche Variante prüfen wir.",
   },
   {
-    q: "Muss PAKT gekühlt werden",
-    a: "Ungeöffnet nein, kühl und dunkel reicht. Kalt schmeckt PAKT allerdings deutlich besser. Geöffnet gehört die Dose in den Kühlschrank und innerhalb von 24 Stunden geleert.",
+    q: "Muss VENARO gekühlt werden",
+    a: "Ungeöffnet nein, kühl und dunkel reicht. Kalt schmeckt VENARO allerdings deutlich besser. Geöffnet gehört die Dose in den Kühlschrank und innerhalb von 24 Stunden geleert.",
   },
   {
-    q: "Ist PAKT für Schwangere geeignet",
-    a: "PAKT enthält kein Koffein und keinen Alkohol. Bei Unsicherheiten gilt trotzdem: kurz mit Ärztin oder Arzt sprechen, das ist keine medizinische Beratung.",
+    q: "Ist VENARO für Schwangere geeignet",
+    a: "VENARO enthält kein Koffein und keinen Alkohol. Bei Unsicherheiten gilt trotzdem: kurz mit Ärztin oder Arzt sprechen, das ist keine medizinische Beratung.",
   },
   {
     q: "Was passiert mit der Dose danach",

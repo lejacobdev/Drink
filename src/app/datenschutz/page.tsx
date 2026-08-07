@@ -35,14 +35,18 @@ export default function DatenschutzPage() {
             2. Hosting und Server-Logfiles
           </h2>
           <p>
-            Diese Website wird gehostet bei: [PLATZHALTER: Hoster, Anschrift].
-            Beim Aufruf der Seiten verarbeitet der Server automatisch
-            technische Zugriffsdaten (IP-Adresse, Datum und Uhrzeit, aufgerufene
+            Diese Website wird als statische Seite über GitHub Pages
+            ausgeliefert (GitHub, Inc., 88 Colin P. Kelly Jr. St, San
+            Francisco, CA 94107, USA; im EU-Raum vertreten über GitHub B.V.).
+            Beim Aufruf der Seiten verarbeitet GitHub automatisch technische
+            Zugriffsdaten (u. a. IP-Adresse, Datum und Uhrzeit, aufgerufene
             Datei, User-Agent, Referrer). Rechtsgrundlage ist Art. 6 Abs. 1
             lit. f DSGVO (berechtigtes Interesse an einem sicheren, stabilen
-            Betrieb). Die Logfiles werden nach [PLATZHALTER: Frist] gelöscht.
-            Mit dem Hoster besteht ein Auftragsverarbeitungsvertrag nach Art. 28
-            DSGVO. [PLATZHALTER: prüfen und anpassen]
+            Betrieb). Details zu Umfang und Speicherdauer der Logfiles sowie
+            zur Übermittlung in die USA regelt die GitHub Privacy Statement
+            (github.com/site/privacy). [PLATZHALTER: prüfen, ob zusätzlich ein
+            Auftragsverarbeitungsvertrag mit GitHub abgeschlossen werden muss,
+            und diesen Abschnitt bei einem Wechsel des Hosters anpassen]
           </p>
         </section>
 
@@ -55,7 +59,7 @@ export default function DatenschutzPage() {
             (Statistik, Marketing) werden erst geladen, nachdem du über den
             Cookie-Banner eingewilligt hast (Art. 6 Abs. 1 lit. a DSGVO, § 25
             TDDDG). Du kannst deine Einwilligung jederzeit unter{" "}
-            <Link href="/cookie-einstellungen" className="underline hover:text-volt">
+            <Link href="/cookie-einstellungen" className="underline hover:text-salbei">
               Cookie-Einstellungen
             </Link>{" "}
             ändern oder widerrufen.
@@ -69,9 +73,14 @@ export default function DatenschutzPage() {
           <p>
             Wenn du unser Kontaktformular nutzt, verarbeiten wir die von dir
             angegebenen Daten (Name, E-Mail-Adresse, Betreff, Nachricht) zur
-            Bearbeitung deiner Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1
-            lit. b DSGVO (vorvertragliche Kommunikation) bzw. Art. 6 Abs. 1
-            lit. f DSGVO. Die Daten werden gelöscht, sobald die Anfrage
+            Bearbeitung deiner Anfrage. Diese Website ist rein statisch und
+            hat keinen eigenen Server, der Formulardaten entgegennimmt: Deine
+            Angaben werden direkt an [PLATZHALTER: Formular-Dienstleister,
+            z. B. Formspree] übermittelt und von dort an uns weitergeleitet.
+            Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche
+            Kommunikation) bzw. Art. 6 Abs. 1 lit. f DSGVO. Mit dem
+            Formular-Dienstleister besteht ein Auftragsverarbeitungsvertrag
+            nach Art. 28 DSGVO. Die Daten werden gelöscht, sobald die Anfrage
             abschließend bearbeitet ist und keine gesetzlichen
             Aufbewahrungspflichten entgegenstehen. [PLATZHALTER: Speicherfrist]
           </p>
@@ -85,12 +94,12 @@ export default function DatenschutzPage() {
             Trägst du deine E-Mail-Adresse in unser Newsletter- oder
             Warteliste-Feld ein, verwenden wir sie, um dich über den
             Marktstart und Neuigkeiten zu informieren. Rechtsgrundlage ist
-            deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Der Versand
-            erfolgt über: [PLATZHALTER: Versanddienstleister oder „eigene
-            Systeme“]. Du kannst dich jederzeit abmelden, z. B. über den
-            Abmeldelink in jeder E-Mail oder per Nachricht an [PLATZHALTER:
-            E-Mail]. [PLATZHALTER: Double-Opt-in-Verfahren beschreiben, sobald
-            eingerichtet]
+            deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Auch dieses
+            Formular läuft über [PLATZHALTER: denselben Formular-Dienstleister
+            wie oben, z. B. Formspree]. Du kannst dich jederzeit abmelden,
+            z. B. über den Abmeldelink in jeder E-Mail oder per Nachricht an
+            [PLATZHALTER: E-Mail]. [PLATZHALTER: Double-Opt-in-Verfahren
+            beschreiben, sobald eingerichtet]
           </p>
         </section>
 

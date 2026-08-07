@@ -36,11 +36,11 @@ export default function CookieBanner() {
       <p className="text-sm text-kreide">
         Wir nutzen Cookies. Essenzielle laufen immer, alles andere erst, wenn du
         zustimmst. Details in den{" "}
-        <Link href="/cookie-einstellungen" className="underline hover:text-volt">
+        <Link href="/cookie-einstellungen" className="underline hover:text-salbei">
           Cookie-Einstellungen
         </Link>{" "}
         und der{" "}
-        <Link href="/datenschutz" className="underline hover:text-volt">
+        <Link href="/datenschutz" className="underline hover:text-salbei">
           Datenschutzerklärung
         </Link>
         .
@@ -48,13 +48,13 @@ export default function CookieBanner() {
       <div className="mt-4 flex flex-wrap gap-2">
         <button
           onClick={() => decide(true, true)}
-          className="rounded-full bg-volt px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
+          className="rounded-full bg-salbei px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
         >
           Alle akzeptieren
         </button>
         <button
           onClick={() => decide(false, false)}
-          className="rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-volt hover:text-volt"
+          className="rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-salbei hover:text-salbei"
         >
           Nur essenzielle
         </button>

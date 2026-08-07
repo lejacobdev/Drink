@@ -30,7 +30,7 @@ export default function Home() {
         <Reveal delay={200} className="mt-8">
           <Link
             href="/faq"
-            className="text-sm font-semibold uppercase tracking-wide text-volt underline-offset-4 hover:underline"
+            className="text-sm font-semibold uppercase tracking-wide text-salbei underline-offset-4 hover:underline"
           >
             Alle Fragen ansehen
           </Link>

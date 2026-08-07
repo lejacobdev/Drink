@@ -8,9 +8,9 @@ const config: Config = {
         kohle: "#0B0B0C",
         asphalt: "#17171A",
         kreide: "#F2F0E9",
-        volt: "#C8FF2E",
-        beere: "#FF4D8D",
-        mango: "#FFA228",
+        salbei: "#9CAF88",
+        beere: "#C98FA0",
+        mango: "#D3A06C",
         muted: "#8B8B92",
       },
       fontFamily: {

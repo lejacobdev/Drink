@@ -1,11 +1,11 @@
 {
-  "name": "pakt-site",
+  "name": "venaro-site",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "npx serve@latest out -l 3000"
   },
   "dependencies": {
     "@react-three/drei": "9.114.3",

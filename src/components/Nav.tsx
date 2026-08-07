@@ -33,7 +33,7 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:px-8">
-        <Link href="/" aria-label="PAKT Startseite" onClick={() => setMobileOpen(false)}>
+        <Link href="/" aria-label="VENARO Startseite" onClick={() => setMobileOpen(false)}>
           <Wordmark className="text-2xl text-kreide" />
         </Link>
 
@@ -42,7 +42,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-sm uppercase tracking-widest text-kreide/80 transition hover:text-volt"
+              className="text-sm uppercase tracking-widest text-kreide/80 transition hover:text-salbei"
             >
               {l.label}
             </Link>
@@ -72,7 +72,7 @@ export default function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setMobileOpen(false)}
-              className="py-3 font-display text-3xl uppercase text-kreide transition hover:text-volt"
+              className="py-3 font-display text-3xl uppercase text-kreide transition hover:text-salbei"
             >
               {l.label}
             </Link>

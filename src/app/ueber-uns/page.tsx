@@ -6,7 +6,7 @@ import BuyButton from "@/components/BuyButton";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "Warum es PAKT gibt: weil Protein bisher nach Pflicht geschmeckt hat. Die Geschichte hinter der Dose.",
+    "Warum es VENARO gibt: weil Protein bisher nach Pflicht geschmeckt hat. Die Geschichte hinter der Dose.",
 };
 
 export default function UeberUnsPage() {
@@ -15,9 +15,9 @@ export default function UeberUnsPage() {
       <Reveal>
         <p className="text-micro mb-4 text-muted">Über uns</p>
         <h1 className="text-display font-display">
-          Der Pakt
+          Warum es
           <br />
-          hinter PAKT.
+          VENARO gibt.
         </h1>
       </Reveal>
 
@@ -41,10 +41,11 @@ export default function UeberUnsPage() {
         </Reveal>
         <Reveal>
           <p>
-            Der Name ist Programm. Ein Pakt ist kein Vorsatz und kein Mood-Board,
-            sondern eine Abmachung: Du gehst hin, auch wenn es regnet. Wir
-            liefern die Dose, die danach auf dich wartet. Mehr Deal braucht es
-            nicht.
+            Den Namen haben wir uns lange erarbeitet. Er sollte sich nicht nach
+            Supplement-Regal anhören und nicht nach Laborprodukt, sondern nach
+            etwas, das neben den großen Marken im Kühlregal stehen darf, ohne
+            zu schreien. VENARO ist kein Versprechen mit Ausrufezeichen. Es ist
+            einfach der Name auf der Dose, die hält, was sie verspricht.
           </p>
         </Reveal>
         <Reveal>
@@ -61,7 +62,7 @@ export default function UeberUnsPage() {
         <BuyButton />
         <Link
           href="/produkte"
-          className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-volt hover:text-volt"
+          className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kreide transition hover:border-salbei hover:text-salbei"
         >
           Sorten ansehen
         </Link>

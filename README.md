@@ -1,16 +1,18 @@
-# PAKT – Markenseite
+# VENARO – Markenseite
 
 Elektrolyte + 20 g Protein, fertig gemixt in der Slim-Dose. Diese Repo enthält die
 komplette Markenseite: Next.js (App Router) + TypeScript + Tailwind, dunkles
-High-Energy-Design, scrollgetriebene 3D-Dose, Händler-Picker statt Shop.
+Design mit gedämpfter Farbpalette, scrollgetriebene 3D-Dose, Händler-Picker statt
+Shop. Die Seite wird als statischer Export gebaut und direkt über GitHub Pages
+gehostet – es läuft kein eigener Server.
 
 ## Setup
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build    # Produktions-Build
-npm start        # Produktions-Server
+npm run dev      # Entwicklung: http://localhost:3000
+npm run build    # statischer Export nach ./out
+npm start        # baut ./out lokal aus (npx serve) zum Gegenprüfen vor dem Push
 ```
 
 Node 18.17+ (getestet mit Node 22). Beim ersten Build lädt `next/font` die
@@ -20,9 +22,7 @@ Google Fonts (Anton, Inter) – dafür ist einmalig Internet nötig.
 
 ```
 src/
-  app/                    Seiten (App Router) + API-Routen
-    api/waitlist          speichert Warteliste-Mails in .data/waitlist.jsonl
-    api/kontakt           speichert Kontaktanfragen in .data/kontakt.jsonl
+  app/                    Seiten (App Router), rein statisch
   components/
     can/                  Scroll-3D-Dose (Treiber + Renderer, entkoppelt)
     retailer/             Händler-Picker (Sheet, Karten, Waitlist)
@@ -34,7 +34,49 @@ src/
     analytics.ts          austauschbarer Analytics-Helper (eine Datei)
     consent.ts            Consent-first Cookie-Logik
     plz.ts                Mock-PLZ-Filter (austauschbar)
+    forms.ts              Formular-Versand an einen externen Endpoint
+.github/workflows/deploy.yml   baut den Export und deployt ihn auf GitHub Pages
 ```
+
+## Hosting auf GitHub Pages
+
+Die Seite läuft als `output: "export"` (siehe `next.config.mjs`) – `next build`
+erzeugt einen komplett statischen Ordner `./out`, den GitHub Pages direkt
+ausliefern kann. Einmalig einrichten:
+
+1. **Push auf `main`.** Der Workflow `.github/workflows/deploy.yml` baut bei
+   jedem Push auf `main` (oder manuell über "Run workflow") automatisch und
+   deployt nach GitHub Pages.
+2. **Pages-Quelle umstellen.** Einmalig unter *Settings → Pages → Source* auf
+   **"GitHub Actions"** stellen (statt "Deploy from a branch"). Das kann nur
+   im Repo selbst gemacht werden, nicht per Code.
+3. **URL.** Die Seite landet unter `https://<user>.github.io/<repo-name>/`.
+   `next.config.mjs` erkennt beim Bauen in der Action automatisch den
+   Repo-Namen (`GITHUB_REPOSITORY`) und setzt den passenden `basePath` – lokal
+   bleibt er leer. Bei einer eigenen Domain später `NEXT_BASE_PATH=""` als
+   Workflow-Env setzen und eine `CNAME`-Datei in `public/` ablegen.
+
+`public/.nojekyll` ist bereits vorhanden – ohne die Datei ignoriert GitHubs
+Jekyll-Build den `_next/`-Ordner (Unterstrich-Präfix) und die Seite lädt kein
+CSS/JS.
+
+## Formulare: Kontakt, Warteliste, Newsletter
+
+Eine statische Seite hat keinen Server, der `/api/*`-Routen ausführen könnte.
+Alle drei Formulare (Kontakt, Wo-kaufen-Warteliste, Footer-Newsletter) senden
+deshalb per `fetch` direkt an einen extern konfigurierten Endpoint
+(`src/lib/forms.ts`) – z. B. [Formspree](https://formspree.io),
+[Getform](https://getform.io) oder [Basin](https://usebasin.com):
+
+```bash
+NEXT_PUBLIC_KONTAKT_ENDPOINT=https://formspree.io/f/[PLATZHALTER]
+NEXT_PUBLIC_WAITLIST_ENDPOINT=https://formspree.io/f/[PLATZHALTER]
+```
+
+Lokal in `.env.local` setzen, im Workflow als Repository-Secrets unter
+*Settings → Secrets and variables → Actions* hinterlegen (der Workflow liest
+sie bereits ein). Ohne gesetzten Endpoint zeigen die Formulare ehrlich einen
+"noch nicht verbunden"-Hinweis statt Daten stillschweigend zu verwerfen.
 
 ## Händler pflegen
 
@@ -55,6 +97,25 @@ Ausgehende Links erhalten automatisch
 (`src/lib/utm.ts`) und feuern ein `retailer_click`-Event über
 `src/lib/analytics.ts` – damit lässt sich Händlern zeigen, wie viel Traffic
 die Seite schickt.
+
+## Farbsystem
+
+Gedämpfte, erdige Palette statt greller Neonfarben – Basis fast schwarz, ein
+ruhiger Salbeigrün-Akzent, drei gedeckte Sortenfarben:
+
+| Token      | Hex       | Verwendung                          |
+| ---------- | --------- | ------------------------------------ |
+| `kohle`    | `#0B0B0C` | Hintergrund                          |
+| `asphalt`  | `#17171A` | Karten, sekundäre Flächen            |
+| `kreide`   | `#F2F0E9` | Fließtext, Überschriften auf Dunkel  |
+| `salbei`   | `#9CAF88` | primärer Akzent, CTAs, Links         |
+| `beere`    | `#C98FA0` | Sorte Himbeere Blaubeere             |
+| `mango`    | `#D3A06C` | Sorte Mango Maracuja                 |
+| `muted`    | `#8B8B92` | sekundärer Text                      |
+
+Limette Zitrone hat keinen eigenen Tailwind-Token, sondern nur einen Hex-Wert
+in `src/lib/flavours.ts` (`#B9C08A`), da Sortenfarben dort zentral gepflegt
+werden.
 
 ## 3D-Dose gegen Bildsequenz tauschen
 
@@ -98,7 +159,7 @@ So läuft der Tausch auf einen vorgerenderten Bildsequenz-Scrubber:
 
 **Rechtlich (bitte anwaltlich prüfen lassen – die Seiten sind Vorlagen):**
 - [ ] `/impressum`: alle `[PLATZHALTER]` (Firma, Vertretung, Register, USt-ID, MStV-Verantwortliche)
-- [ ] `/datenschutz`: Verantwortlicher, Hoster, Speicherfristen, Newsletter-Dienst inkl. Double-Opt-in, Analysedienst, Stand-Datum
+- [ ] `/datenschutz`: Verantwortlicher, Hoster (jetzt GitHub Pages), Speicherfristen, Formular-Dienst, Analysedienst, Stand-Datum
 - [ ] `/cookie-einstellungen`: eingesetzte Dienste in den Kategorietexten benennen
 - [ ] Cookie-Banner: bleibt korrekt, solange keine Dritt-Skripte eingebunden sind; neue Skripte nur über `loadConsentedScripts()` in `src/lib/consent.ts` einhängen
 - [ ] LMIV-Angaben in `src/lib/flavours.ts` gegen die echte Rezeptur prüfen (Zutatenreihenfolge, Nährwerte, Allergene, NRV-Prozente), Hersteller-Platzhalter auf der Produktseite füllen
@@ -106,12 +167,14 @@ So läuft der Tausch auf einen vorgerenderten Bildsequenz-Scrubber:
 - [ ] Health-Claims prüfen lassen (aktuell bewusst zurückhaltend formuliert)
 
 **Inhaltlich/technisch:**
+- [ ] Formular-Dienst wählen (Formspree o. ä.) und `NEXT_PUBLIC_KONTAKT_ENDPOINT` / `NEXT_PUBLIC_WAITLIST_ENDPOINT` als Repository-Secrets setzen
+- [ ] Pages-Quelle im Repo einmalig auf "GitHub Actions" stellen (*Settings → Pages*)
 - [ ] Händler-URLs in `src/lib/retailers.ts` eintragen (aktuell `[PLATZHALTER]`), erst dann `status: "live"`
 - [ ] Händler-Logos nur mit schriftlicher Freigabe verwenden (bis dahin: Typo-Wortmarken, bereits so gebaut)
 - [ ] Testimonials sind Beispieltexte – durch echte, freigegebene Zitate ersetzen
-- [ ] `/api/waitlist` und `/api/kontakt` speichern nur in `.data/` (auf Serverless flüchtig) – an Newsletter-Tool/CRM bzw. E-Mail anbinden
-- [ ] Kontakt-E-Mail-Platzhalter auf `/kontakt` füllen
+- [ ] Kontakt-E-Mail-Platzhalter auf `/kontakt`, im Footer und in den Formular-Fallbacks füllen
 - [ ] Analytics-Dienst wählen und in `src/lib/analytics.ts` + Consent-Texten verdrahten
 - [ ] Echte Produktfotos/3D-Label finalisieren (Label entsteht aktuell zur Laufzeit als CanvasTexture)
 - [ ] OG-Images, Favicon, `robots.txt`/`sitemap.xml` ergänzen
+- [ ] Bei eigener Domain: `NEXT_BASE_PATH=""` im Workflow setzen und `CNAME`-Datei in `public/` anlegen
 - [ ] Pfandlogo/Pflichtkennzeichnung der Dose mit dem Abfüller klären

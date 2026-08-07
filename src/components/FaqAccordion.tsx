@@ -4,7 +4,7 @@ export type FaqItem = { q: string; a: string };
 
 export const landingFaq: FaqItem[] = [
   {
-    q: "Was genau ist PAKT",
+    q: "Was genau ist VENARO",
     a: "Ein fertig gemixter Drink aus der Slim-Dose: 20 g Milchprotein und 500 mg Elektrolyte pro 330 ml, ohne Zucker und ohne Koffein. Gedacht für nach dem Training, den Schultag oder dazwischen.",
   },
   {
@@ -13,15 +13,15 @@ export const landingFaq: FaqItem[] = [
   },
   {
     q: "Ist wirklich kein Zucker drin",
-    a: "Pro 100 ml stecken unter 0,5 g Zucker in PAKT, das gilt lebensmittelrechtlich als zuckerfrei. Gesüßt wird mit Steviolglycosiden und Sucralose.",
+    a: "Pro 100 ml stecken unter 0,5 g Zucker in VENARO, das gilt lebensmittelrechtlich als zuckerfrei. Gesüßt wird mit Steviolglycosiden und Sucralose.",
   },
   {
-    q: "Enthält PAKT Koffein",
-    a: "Nein. PAKT ist kein Energy-Drink, sondern Regeneration. Du kannst ihn auch abends trinken, ohne bis drei Uhr an die Decke zu starren.",
+    q: "Enthält VENARO Koffein",
+    a: "Nein. VENARO ist kein Energy-Drink, sondern Regeneration. Du kannst ihn auch abends trinken, ohne bis drei Uhr an die Decke zu starren.",
   },
   {
-    q: "Wo kann ich PAKT kaufen",
-    a: "Wir bringen PAKT gerade in den Handel. Trag dich auf der Seite Wo kaufen ein, dann sagen wir dir Bescheid, sobald wir bei dir im Regal stehen.",
+    q: "Wo kann ich VENARO kaufen",
+    a: "Wir bringen VENARO gerade in den Handel. Trag dich auf der Seite Wo kaufen ein, dann sagen wir dir Bescheid, sobald wir bei dir im Regal stehen.",
   },
 ];
 

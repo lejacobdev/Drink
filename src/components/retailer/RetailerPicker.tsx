@@ -11,6 +11,7 @@ import {
 import { filterByPlz, isValidPlz } from "@/lib/plz";
 import { withUtm } from "@/lib/utm";
 import { track } from "@/lib/analytics";
+import { submitWaitlist } from "@/lib/forms";
 
 /**
  * Einzige erlaubte localStorage-Nutzung der Seite:
@@ -61,7 +62,7 @@ function RetailerCard({
             <Clock className="h-3 w-3" aria-hidden /> bald verfügbar
           </span>
         ) : (
-          <span className="rounded-full bg-volt/15 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-volt">
+          <span className="rounded-full bg-salbei/15 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-salbei">
             verfügbar
           </span>
         )}
@@ -91,7 +92,7 @@ function RetailerCard({
       target="_blank"
       rel="noopener"
       onClick={() => onPick(retailer)}
-      className="block rounded-card border border-white/10 bg-asphalt p-5 transition hover:border-volt hover:bg-asphalt/80"
+      className="block rounded-card border border-white/10 bg-asphalt p-5 transition hover:border-salbei hover:bg-asphalt/80"
     >
       {inner}
     </a>
@@ -100,29 +101,37 @@ function RetailerCard({
 
 function WaitlistForm({ source }: { source: string }) {
   const [email, setEmail] = useState("");
-  const [state, setState] = useState<"idle" | "busy" | "done" | "error">("idle");
+  const [state, setState] = useState<"idle" | "busy" | "done" | "error" | "unconfigured">(
+    "idle"
+  );
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setState("busy");
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
-      });
-      if (!res.ok) throw new Error();
+    const result = await submitWaitlist({ email, source });
+    if (result.ok) {
       track({ name: "waitlist_signup", props: { source } });
       setState("done");
-    } catch {
+    } else if (result.reason === "not_configured") {
+      setState("unconfigured");
+    } else {
       setState("error");
     }
   }
 
   if (state === "done") {
     return (
-      <p className="rounded-card border border-volt/30 bg-volt/10 p-4 text-sm text-kreide">
-        Steht. Wir melden uns, sobald PAKT bei dir im Regal steht.
+      <p className="rounded-card border border-salbei/30 bg-salbei/10 p-4 text-sm text-kreide">
+        Steht. Wir melden uns, sobald VENARO bei dir im Regal steht.
+      </p>
+    );
+  }
+
+  if (state === "unconfigured") {
+    return (
+      <p className="rounded-card border border-white/15 bg-asphalt p-4 text-sm text-kreide/80">
+        Formular noch nicht verbunden. Schreib uns direkt an
+        [PLATZHALTER: kontakt@deine-domain.de].
       </p>
     );
   }
@@ -139,12 +148,12 @@ function WaitlistForm({ source }: { source: string }) {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="deine@mail.de"
-        className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-volt focus:outline-none"
+        className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none"
       />
       <button
         type="submit"
         disabled={state === "busy"}
-        className="shrink-0 rounded-full bg-volt px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
+        className="shrink-0 rounded-full bg-salbei px-6 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
       >
         {state === "busy" ? "Moment" : "Bescheid sagen"}
       </button>
@@ -218,7 +227,7 @@ export default function RetailerPicker({ variant }: { variant: "sheet" | "page" 
           value={plz}
           onChange={(e) => setPlz(e.target.value.replace(/\D/g, ""))}
           placeholder="PLZ eingeben, Händler in deiner Nähe sehen"
-          className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-volt focus:outline-none"
+          className="w-full rounded-full border border-white/15 bg-kohle px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none"
         />
       </div>
       {isValidPlz(plz) && (

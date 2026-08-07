@@ -43,7 +43,7 @@ const rows: { label: string; pakt: Cell; shake: Cell; energy: Cell }[] = [
 ];
 
 function CellIcon({ kind }: { kind: Cell["kind"] }) {
-  if (kind === "yes") return <Check className="h-4 w-4 shrink-0 text-volt" aria-hidden />;
+  if (kind === "yes") return <Check className="h-4 w-4 shrink-0 text-salbei" aria-hidden />;
   if (kind === "no") return <X className="h-4 w-4 shrink-0 text-beere" aria-hidden />;
   return <Minus className="h-4 w-4 shrink-0 text-muted" aria-hidden />;
 }
@@ -66,7 +66,7 @@ export default function ComparisonTable() {
             <tr className="border-b border-white/15">
               <th className="py-4 pr-4 font-normal text-muted"> </th>
               <th className="px-4 py-4">
-                <span className="font-display text-xl uppercase text-volt">PAKT</span>
+                <span className="font-display text-xl uppercase text-salbei">VENARO</span>
               </th>
               <th className="px-4 py-4 font-medium text-kreide/80">Protein-Shake</th>
               <th className="px-4 py-4 font-medium text-kreide/80">Energy-Drink</th>

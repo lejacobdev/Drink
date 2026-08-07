@@ -19,8 +19,8 @@ export default function BuyButton({
     "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold uppercase tracking-wide transition";
   const styles =
     variant === "primary"
-      ? "bg-volt text-kohle hover:brightness-110"
-      : "border border-white/25 text-kreide hover:border-volt hover:text-volt";
+      ? "bg-salbei text-kohle hover:brightness-110"
+      : "border border-white/25 text-kreide hover:border-salbei hover:text-salbei";
   return (
     <button onClick={open} className={`${base} ${styles} ${className}`}>
       {children}

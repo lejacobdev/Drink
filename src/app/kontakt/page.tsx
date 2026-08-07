@@ -4,7 +4,7 @@ import KontaktForm from "./KontaktForm";
 
 export const metadata: Metadata = {
   title: "Kontakt",
-  description: "Schreib dem PAKT Team – Fragen, Feedback, Handel und Presse.",
+  description: "Schreib dem VENARO Team – Fragen, Feedback, Handel und Presse.",
 };
 
 export default function KontaktPage() {
@@ -14,7 +14,7 @@ export default function KontaktPage() {
         <p className="text-micro mb-4 text-muted">Kontakt</p>
         <h1 className="text-display font-display">Sag was.</h1>
         <p className="mt-4 max-w-lg text-lg text-kreide/80">
-          Feedback zur Dose, Fragen zum Produkt oder du willst PAKT ins Regal
+          Feedback zur Dose, Fragen zum Produkt oder du willst VENARO ins Regal
           holen – schreib uns, wir lesen alles.
         </p>
       </Reveal>

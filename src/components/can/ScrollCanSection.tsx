@@ -123,13 +123,13 @@ export default function ScrollCanSection() {
             </div>
             <ul className="space-y-3 text-kreide/90">
               {CALLOUTS.map((c) => (
-                <li key={c.text} className="border-l-2 border-volt pl-4">{c.text}</li>
+                <li key={c.text} className="border-l-2 border-salbei pl-4">{c.text}</li>
               ))}
             </ul>
             <dl className="grid grid-cols-2 gap-6">
               {NUMBERS.map((n) => (
                 <div key={n.label}>
-                  <dd className="font-display text-4xl text-volt">
+                  <dd className="font-display text-4xl text-salbei">
                     {n.value}
                     {n.suffix}
                   </dd>
@@ -139,7 +139,7 @@ export default function ScrollCanSection() {
             </dl>
             <Link
               href="/wo-kaufen"
-              className="inline-flex rounded-full bg-volt px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
+              className="inline-flex rounded-full bg-salbei px-7 py-3.5 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
             >
               Wo kaufen
             </Link>
@@ -208,7 +208,7 @@ export default function ScrollCanSection() {
             {NUMBERS.map((n, i) => (
               <div key={n.label}>
                 <dd
-                  className="font-display text-4xl text-volt md:text-5xl"
+                  className="font-display text-4xl text-salbei md:text-5xl"
                 >
                   <span ref={(el) => { counterRefs.current[i] = el; }}>0{n.suffix}</span>
                 </dd>
@@ -226,7 +226,7 @@ export default function ScrollCanSection() {
           <h2 className="font-display text-h2">Überzeugt</h2>
           <Link
             href="/wo-kaufen"
-            className="mt-6 inline-flex rounded-full bg-volt px-8 py-4 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
+            className="mt-6 inline-flex rounded-full bg-salbei px-8 py-4 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110"
           >
             Wo kaufen
           </Link>

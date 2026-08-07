@@ -83,8 +83,8 @@ export const flavours: Flavour[] = [
     claim: "Sauer macht stark.",
     beschreibung:
       "Limette und Zitrone, kalt am besten. Schmeckt nach Sommerpause auf dem Hartplatz, nicht nach Labor.",
-    farbe: "#C8FF2E",
-    farbeDunkel: "#5A7A00",
+    farbe: "#B9C08A",
+    farbeDunkel: "#5B6B3E",
     zutaten: [...basisZutaten, { name: "Limettensaftkonzentrat (1 %)" }],
     naehrwerte: { energieKj: 135, energieKcal: 32, ...basisNaehrwerte },
     nettofuellmenge: "330 ml",
@@ -99,8 +99,8 @@ export const flavours: Flavour[] = [
     claim: "Dunkel. Süß. Null Zucker.",
     beschreibung:
       "Himbeere und Blaubeere, rund und dunkel. Die Sorte für alle, die Energy-Drinks süß mögen, aber ohne das Kratzen danach.",
-    farbe: "#FF4D8D",
-    farbeDunkel: "#7A1039",
+    farbe: "#C98FA0",
+    farbeDunkel: "#6B3A47",
     zutaten: [...basisZutaten, { name: "Himbeersaftkonzentrat (1 %)" }],
     naehrwerte: { energieKj: 139, energieKcal: 33, ...basisNaehrwerte },
     nettofuellmenge: "330 ml",
@@ -115,8 +115,8 @@ export const flavours: Flavour[] = [
     claim: "Urlaub für die Muskeln.",
     beschreibung:
       "Mango und Maracuja, reif und laut. Der Geschmack, der aus der Kabine eine Strandbar macht.",
-    farbe: "#FFA228",
-    farbeDunkel: "#8A4D00",
+    farbe: "#D3A06C",
+    farbeDunkel: "#6E4A30",
     zutaten: [...basisZutaten, { name: "Mangosaftkonzentrat (1 %)" }],
     naehrwerte: { energieKj: 141, energieKcal: 34, ...basisNaehrwerte },
     nettofuellmenge: "330 ml",

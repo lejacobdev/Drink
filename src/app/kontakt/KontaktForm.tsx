@@ -1,41 +1,50 @@
 "use client";
 
 import { useState } from "react";
+import { submitKontakt } from "@/lib/forms";
 
 const inputClasses =
-  "w-full rounded-card border border-white/15 bg-asphalt px-5 py-3.5 text-sm text-kreide placeholder:text-muted focus:border-volt focus:outline-none";
+  "w-full rounded-card border border-white/15 bg-asphalt px-5 py-3.5 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none";
 
 export default function KontaktForm() {
-  const [state, setState] = useState<"idle" | "busy" | "done" | "error">("idle");
+  const [state, setState] = useState<"idle" | "busy" | "done" | "error" | "unconfigured">(
+    "idle"
+  );
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setState("busy");
     const data = new FormData(e.currentTarget);
-    try {
-      const res = await fetch("/api/kontakt", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          betreff: data.get("betreff"),
-          nachricht: data.get("nachricht"),
-        }),
-      });
-      if (!res.ok) throw new Error();
-      setState("done");
-    } catch {
-      setState("error");
-    }
+    const result = await submitKontakt({
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      betreff: String(data.get("betreff") ?? ""),
+      nachricht: String(data.get("nachricht") ?? ""),
+    });
+    if (result.ok) setState("done");
+    else if (result.reason === "not_configured") setState("unconfigured");
+    else setState("error");
   }
 
   if (state === "done") {
     return (
-      <div className="rounded-card border border-volt/30 bg-volt/10 p-8">
+      <div className="rounded-card border border-salbei/30 bg-salbei/10 p-8">
         <p className="font-display text-2xl uppercase text-kreide">Angekommen.</p>
         <p className="mt-2 text-kreide/80">
           Wir melden uns, meistens innerhalb von zwei Werktagen.
+        </p>
+      </div>
+    );
+  }
+
+  if (state === "unconfigured") {
+    return (
+      <div className="rounded-card border border-white/15 bg-asphalt p-8">
+        <p className="font-display text-2xl uppercase text-kreide">Noch nicht verbunden.</p>
+        <p className="mt-2 text-kreide/80">
+          Dieses Formular braucht einen externen Formular-Dienst (die Seite ist
+          statisch, ohne eigenen Server). Bis das eingerichtet ist, schreib uns
+          direkt an [PLATZHALTER: kontakt@deine-domain.de].
         </p>
       </div>
     );
@@ -92,7 +101,7 @@ export default function KontaktForm() {
       <button
         type="submit"
         disabled={state === "busy"}
-        className="rounded-full bg-volt px-8 py-4 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
+        className="rounded-full bg-salbei px-8 py-4 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
       >
         {state === "busy" ? "Sendet" : "Abschicken"}
       </button>

@@ -34,7 +34,7 @@ export default function FlavourSwitcher() {
       />
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
-          <p className="text-micro mb-4 text-muted">Drei Sorten, ein Pakt</p>
+          <p className="text-micro mb-4 text-muted">Drei Sorten, ein Versprechen</p>
           <h2
             key={flavour.slug}
             className="text-h2 font-display transition-colors duration-500"

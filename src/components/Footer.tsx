@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { track } from "@/lib/analytics";
+import { submitWaitlist } from "@/lib/forms";
 
 const cols: { title: string; links: { href: string; label: string }[] }[] = [
   {
@@ -30,27 +31,35 @@ const cols: { title: string; links: { href: string; label: string }[] }[] = [
 
 function NewsletterForm() {
   const [email, setEmail] = useState("");
-  const [state, setState] = useState<"idle" | "busy" | "done" | "error">("idle");
+  const [state, setState] = useState<"idle" | "busy" | "done" | "error" | "unconfigured">(
+    "idle"
+  );
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setState("busy");
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "footer_newsletter" }),
-      });
-      if (!res.ok) throw new Error();
+    const result = await submitWaitlist({ email, source: "footer_newsletter" });
+    if (result.ok) {
       track({ name: "waitlist_signup", props: { source: "footer_newsletter" } });
       setState("done");
-    } catch {
+    } else if (result.reason === "not_configured") {
+      setState("unconfigured");
+    } else {
       setState("error");
     }
   }
 
   if (state === "done") {
-    return <p className="text-sm text-volt">Steht. Du hörst von uns.</p>;
+    return <p className="text-sm text-salbei">Steht. Du hörst von uns.</p>;
+  }
+
+  if (state === "unconfigured") {
+    return (
+      <p className="max-w-sm text-sm text-muted">
+        Formular noch nicht verbunden. Schreib uns an [PLATZHALTER:
+        kontakt@deine-domain.de].
+      </p>
+    );
   }
 
   return (
@@ -65,12 +74,12 @@ function NewsletterForm() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="deine@mail.de"
-        className="w-full rounded-full border border-white/15 bg-asphalt px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-volt focus:outline-none"
+        className="w-full rounded-full border border-white/15 bg-asphalt px-5 py-3 text-sm text-kreide placeholder:text-muted focus:border-salbei focus:outline-none"
       />
       <button
         type="submit"
         disabled={state === "busy"}
-        className="shrink-0 rounded-full bg-volt px-5 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
+        className="shrink-0 rounded-full bg-salbei px-5 py-3 text-sm font-semibold uppercase tracking-wide text-kohle transition hover:brightness-110 disabled:opacity-60"
       >
         Los
       </button>
@@ -99,7 +108,7 @@ export default function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm text-kreide/80 transition hover:text-volt"
+                      className="text-sm text-kreide/80 transition hover:text-salbei"
                     >
                       {l.label}
                     </Link>
@@ -117,10 +126,10 @@ export default function Footer() {
       {/* Wortmarke riesig über die volle Breite */}
       <div aria-hidden className="select-none px-1 pb-2">
         <p
-          className="font-display text-center uppercase leading-[0.8] text-volt"
+          className="font-display text-center uppercase leading-[0.8] text-salbei"
           style={{ fontSize: "clamp(6rem, 24vw, 24rem)", letterSpacing: "0.02em" }}
         >
-          PAKT
+          VENARO
         </p>
       </div>
     </footer>
