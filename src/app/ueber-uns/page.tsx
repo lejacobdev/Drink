@@ -24,10 +24,10 @@ export default function UeberUnsPage() {
       <div className="mt-14 space-y-10 text-lg leading-relaxed text-kreide/85">
         <Reveal>
           <p>
-            Die Idee kam in einer Umkleide. Training vorbei, Hunger da, und zur
-            Auswahl standen: ein Shaker mit Klümpchen vom Vortag oder ein
-            Energy-Drink mit elf Gramm Zucker pro hundert Milliliter. Beides
-            fühlte sich nach Kompromiss an. Beides war einer.
+            Ein Freund von mir trank nach dem Training einen Elektrolyte-Drink.
+            Ich hab kurz probiert, ein Schluck. Furchtbar. Und dann die Frage,
+            die alles gestartet hat: Warum schmeckt kein einziger
+            Elektrolyte-Drink gut?
           </p>
         </Reveal>
         <Reveal>
