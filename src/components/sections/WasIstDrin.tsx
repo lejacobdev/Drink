@@ -4,12 +4,12 @@ import { flavours } from "@/lib/flavours";
 
 const calloutsLeft = [
   {
-    title: "20 g Protein",
-    text: "Milchprotein-Isolat, gelöst statt gepulvert.",
-  },
-  {
     title: "500 mg Elektrolyte",
     text: "Kalium, Magnesium und Natrium in Citratform.",
+  },
+  {
+    title: "Ohne Koffein",
+    text: "Für nach dem Training oder abends, ganz ohne Wachmacher.",
   },
 ];
 

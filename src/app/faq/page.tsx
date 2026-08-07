@@ -10,15 +10,15 @@ export const metadata: Metadata = {
 const extraFaq: FaqItem[] = [
   {
     q: "Für wen ist sodaLYTE gedacht",
-    a: "Für alle, die trainieren, Sport machen oder einfach mehr Protein wollen, ohne Pulver anzurühren. Kein Nischen-Supplement, sondern ein Drink fürs Kühlregal.",
+    a: "Für alle, die trainieren, Sport machen oder einfach einen Elektrolyte-Drink wollen, der schmeckt. Kein Nischen-Supplement, sondern ein Drink fürs Kühlregal.",
   },
   {
     q: "Wann trinke ich sodaLYTE am besten",
-    a: "Klassisch direkt nach dem Training, wenn Muskeln Protein und der Körper Elektrolyte brauchen. Funktioniert aber genauso in der Mittagspause oder nach dem Radweg zur Uni.",
+    a: "Klassisch direkt nach dem Training, wenn der Körper Elektrolyte braucht. Funktioniert aber genauso in der Mittagspause oder nach dem Radweg zur Uni.",
   },
   {
     q: "Ist sodaLYTE vegan",
-    a: "Nein. Wir setzen auf Milchprotein-Isolat, weil es sich am besten löst und komplett schmeckt. Eine pflanzliche Variante prüfen wir.",
+    a: "Ja. Ohne Milchprotein sind alle Zutaten pflanzlichen oder mineralischen Ursprungs.",
   },
   {
     q: "Muss sodaLYTE gekühlt werden",

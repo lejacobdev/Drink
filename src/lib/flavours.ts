@@ -44,16 +44,14 @@ export type Flavour = {
 };
 
 export const PRO_DOSE = {
-  protein: 20,
   elektrolyteMg: 500,
   zuckerG: 0,
-  kcal: 105,
+  kcal: 10,
   volumenMl: 330,
 };
 
 const basisZutaten: Zutat[] = [
   { name: "Wasser" },
-  { name: "MILCHEIWEISSISOLAT", allergen: true },
   { name: "Säuerungsmittel: Citronensäure" },
   { name: "Elektrolyte (Kaliumcitrat, Magnesiumcitrat, Natriumchlorid)" },
   { name: "natürliches Aroma" },
@@ -61,12 +59,13 @@ const basisZutaten: Zutat[] = [
   { name: "Stabilisator: Gellan" },
 ];
 
+/** Eiweiß bleibt als Pflichtangabe nach LMIV in der Tabelle, auch bei 0 g. */
 const basisNaehrwerte: Omit<Naehrwerte, "energieKj" | "energieKcal"> = {
-  fett: "0,2 g",
-  gesaettigt: "0,1 g",
+  fett: "0 g",
+  gesaettigt: "0 g",
   kohlenhydrate: "0,8 g",
   zucker: "< 0,5 g",
-  eiweiss: "6,1 g",
+  eiweiss: "0 g",
   salz: "0,10 g",
   kalium: "121 mg",
   kaliumNrv: "6 %",
@@ -86,7 +85,7 @@ export const flavours: Flavour[] = [
     farbe: "#B9C08A",
     farbeDunkel: "#5B6B3E",
     zutaten: [...basisZutaten, { name: "Limettensaftkonzentrat (1 %)" }],
-    naehrwerte: { energieKj: 135, energieKcal: 32, ...basisNaehrwerte },
+    naehrwerte: { energieKj: 13, energieKcal: 3, ...basisNaehrwerte },
     nettofuellmenge: "330 ml",
     uvp: 2.49,
     grundpreisPro100ml: 0.75,
@@ -102,7 +101,7 @@ export const flavours: Flavour[] = [
     farbe: "#C98FA0",
     farbeDunkel: "#6B3A47",
     zutaten: [...basisZutaten, { name: "Himbeersaftkonzentrat (1 %)" }],
-    naehrwerte: { energieKj: 139, energieKcal: 33, ...basisNaehrwerte },
+    naehrwerte: { energieKj: 13, energieKcal: 3, ...basisNaehrwerte },
     nettofuellmenge: "330 ml",
     uvp: 2.49,
     grundpreisPro100ml: 0.75,
@@ -118,7 +117,7 @@ export const flavours: Flavour[] = [
     farbe: "#D3A06C",
     farbeDunkel: "#6E4A30",
     zutaten: [...basisZutaten, { name: "Mangosaftkonzentrat (1 %)" }],
-    naehrwerte: { energieKj: 141, energieKcal: 34, ...basisNaehrwerte },
+    naehrwerte: { energieKj: 13, energieKcal: 3, ...basisNaehrwerte },
     nettofuellmenge: "330 ml",
     uvp: 2.49,
     grundpreisPro100ml: 0.75,

@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     quote:
-      "Schmeckt wie was, das man freiwillig trinkt. Bei Proteinzeug ist das leider selten.",
+      "Schmeckt wie was, das man freiwillig trinkt. Bei Elektrolyte-Zeug ist das leider selten.",
     name: "Malik, 22",
     context: "Gym, Lehramtsstudium",
   },
@@ -25,9 +25,8 @@ const marqueeItems = [
   "Kein Pulver",
   "Kein Shaker",
   "Kein Zucker",
-  "20 g Protein",
   "500 mg Elektrolyte",
-  "105 kcal",
+  "10 kcal",
   "Aus dem Kühlregal",
 ];
 

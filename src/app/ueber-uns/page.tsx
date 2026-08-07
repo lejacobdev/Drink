@@ -33,10 +33,9 @@ export default function UeberUnsPage() {
         <Reveal>
           <p>
             Also haben wir gebaut, was wir selbst kaufen wollten. Einen Drink,
-            der die Arbeit nach dem Training erledigt – 20 Gramm Protein, die
-            Elektrolyte, die beim Schwitzen rausgehen – und dabei schmeckt wie
-            etwas, das man freiwillig trinkt. Kalt, erfrischend, aus der Dose.
-            Fertig.
+            der die Elektrolyte zurückbringt, die beim Schwitzen rausgehen –
+            und dabei schmeckt wie etwas, das man freiwillig trinkt. Kalt,
+            erfrischend, aus der Dose. Fertig.
           </p>
         </Reveal>
         <Reveal>

@@ -49,7 +49,7 @@ function createLabelTexture(flavour: Flavour): THREE.CanvasTexture {
       ctx.font = `700 40px ${bodyFont}, system-ui, sans-serif`;
       ctx.fillText(flavour.name.toUpperCase(), x, 880, 440);
       ctx.font = `600 24px ${bodyFont}, system-ui, sans-serif`;
-      ctx.fillText("20 G PROTEIN · 0 G ZUCKER", x, 930, 420);
+      ctx.fillText("500 MG ELEKTROLYTE · 0 G ZUCKER", x, 930, 420);
     }
 
     // Wortmarke vertikal, zweimal um den Umfang

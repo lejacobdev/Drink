@@ -1,6 +1,6 @@
 # sodaLYTE – Markenseite
 
-Elektrolyte + 20 g Protein, fertig gemixt in der Slim-Dose. Diese Repo enthält die
+Elektrolyte, fertig gemixt in der Slim-Dose. Diese Repo enthält die
 komplette Markenseite: Next.js (App Router) + TypeScript + Tailwind, dunkles
 Design mit gedämpfter Farbpalette, scrollgetriebene 3D-Dose, Händler-Picker statt
 Shop. Die Seite wird als statischer Export gebaut und direkt über GitHub Pages

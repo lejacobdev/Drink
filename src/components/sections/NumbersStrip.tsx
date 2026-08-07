@@ -4,13 +4,12 @@ import { useEffect, useRef } from "react";
 import { PRO_DOSE } from "@/lib/flavours";
 
 const numbers = [
-  { value: PRO_DOSE.protein, suffix: " g", label: "Protein pro Dose" },
   { value: PRO_DOSE.elektrolyteMg, suffix: " mg", label: "Elektrolyte" },
   { value: PRO_DOSE.zuckerG, suffix: " g", label: "Zucker" },
   { value: PRO_DOSE.kcal, suffix: "", label: "kcal pro Dose" },
 ];
 
-/** Zählt die vier Kennzahlen hoch, sobald die Leiste sichtbar wird. */
+/** Zählt die drei Kennzahlen hoch, sobald die Leiste sichtbar wird. */
 export default function NumbersStrip() {
   const rootRef = useRef<HTMLDivElement>(null);
   const valueRefs = useRef<Array<HTMLSpanElement | null>>([]);
@@ -48,7 +47,7 @@ export default function NumbersStrip() {
     <section className="border-y border-white/10 bg-asphalt/60">
       <div
         ref={rootRef}
-        className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-5 py-16 md:grid-cols-4 md:px-8 md:py-20"
+        className="mx-auto grid max-w-7xl grid-cols-3 gap-x-6 gap-y-10 px-5 py-16 md:px-8 md:py-20"
       >
         {numbers.map((n, i) => (
           <div key={n.label} className="text-center">

@@ -5,15 +5,11 @@ export type FaqItem = { q: string; a: string };
 export const landingFaq: FaqItem[] = [
   {
     q: "Was genau ist sodaLYTE",
-    a: "Ein fertig gemixter Drink aus der Slim-Dose: 20 g Milchprotein und 500 mg Elektrolyte pro 330 ml, ohne Zucker und ohne Koffein. Gedacht für nach dem Training, den Schultag oder dazwischen.",
+    a: "Ein fertig gemixter Drink aus der Slim-Dose: 500 mg Elektrolyte pro 330 ml, ohne Zucker und ohne Koffein. Gedacht für nach dem Training, den Schultag oder dazwischen.",
   },
   {
     q: "Ist sodaLYTE eine Limonade oder ein Sprudel",
     a: "Nein. sodaLYTE ist still, ohne Kohlensäure. Der Name kommt vom Mineral Sodalith – ein Stein mit viel Natrium – plus „LYTE“ für Elektrolyte, nicht von Soda-Wasser.",
-  },
-  {
-    q: "Wie viel Protein steckt in einer Dose",
-    a: "20 g pro Dose, aus Milchprotein-Isolat. Das entspricht etwa der Menge aus einem klassischen Shake, nur ohne Pulverwolke und Shaker.",
   },
   {
     q: "Ist wirklich kein Zucker drin",

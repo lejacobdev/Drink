@@ -35,14 +35,13 @@ function usePrefersReducedMotion(): boolean {
 }
 
 const NUMBERS = [
-  { value: PRO_DOSE.protein, suffix: " g", label: "Protein" },
   { value: PRO_DOSE.elektrolyteMg, suffix: " mg", label: "Elektrolyte" },
   { value: PRO_DOSE.zuckerG, suffix: " g", label: "Zucker" },
   { value: PRO_DOSE.kcal, suffix: "", label: "kcal" },
 ];
 
 const CALLOUTS = [
-  { text: "20 g Milchprotein-Isolat", side: "left", top: "22%" },
+  { text: "Sofort trinkfertig, kein Mixen", side: "left", top: "22%" },
   { text: "Kalium, Magnesium, Natrium", side: "right", top: "38%" },
   { text: "Null Zucker, echte Frucht", side: "left", top: "58%" },
 ] as const;
@@ -126,7 +125,7 @@ export default function ScrollCanSection() {
                 <li key={c.text} className="border-l-2 border-sodalith pl-4">{c.text}</li>
               ))}
             </ul>
-            <dl className="grid grid-cols-2 gap-6">
+            <dl className="grid grid-cols-3 gap-6">
               {NUMBERS.map((n) => (
                 <div key={n.label}>
                   <dd className="font-display text-4xl text-sodalith">
@@ -204,7 +203,7 @@ export default function ScrollCanSection() {
           ref={numbersRef}
           className="pointer-events-none absolute inset-x-0 bottom-[8vh] opacity-0 transition-opacity duration-150"
         >
-          <dl className="mx-auto grid max-w-3xl grid-cols-2 gap-6 px-5 text-center sm:grid-cols-4">
+          <dl className="mx-auto grid max-w-3xl grid-cols-3 gap-6 px-5 text-center">
             {NUMBERS.map((n, i) => (
               <div key={n.label}>
                 <dd

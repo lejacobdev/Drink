@@ -17,7 +17,7 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!flavour) return {};
   return {
     title: `${flavour.name}`,
-    description: `sodaLYTE ${flavour.name}: ${flavour.claim} 20 g Protein und 500 mg Elektrolyte pro Dose, null Zucker.`,
+    description: `sodaLYTE ${flavour.name}: ${flavour.claim} 500 mg Elektrolyte pro Dose, null Zucker.`,
   };
 }
 
@@ -70,9 +70,8 @@ export default function ProduktPage({ params }: Props) {
                 </p>
               </div>
             </Reveal>
-            <Reveal delay={200} className="mt-10 grid max-w-md grid-cols-2 gap-4 sm:grid-cols-4">
+            <Reveal delay={200} className="mt-10 grid max-w-md grid-cols-3 gap-4">
               {[
-                [`${PRO_DOSE.protein} g`, "Protein"],
                 [`${PRO_DOSE.elektrolyteMg} mg`, "Elektrolyte"],
                 [`${PRO_DOSE.zuckerG} g`, "Zucker"],
                 [`${PRO_DOSE.kcal}`, "kcal"],
@@ -113,9 +112,8 @@ export default function ProduktPage({ params }: Props) {
               ))}
             </p>
             <p className="mt-4 text-sm text-muted">
-              Allergene sind <strong className="text-kreide">hervorgehoben</strong>.
-              Enthält <strong className="text-kreide">Milch</strong> und daraus
-              gewonnene Erzeugnisse.
+              Allergene würden <strong className="text-kreide">hervorgehoben</strong>.
+              sodaLYTE enthält aktuell keinen der 14 EU-Hauptallergene.
             </p>
 
             <div className="mt-10 space-y-3 text-sm text-kreide/90">

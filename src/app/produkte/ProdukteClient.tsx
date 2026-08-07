@@ -23,8 +23,8 @@ export default function ProdukteClient() {
         <p className="text-micro mb-4 text-muted">Produkte</p>
         <h1 className="text-display font-display">Drei Sorten.</h1>
         <p className="mt-4 max-w-md text-lg text-kreide/80">
-          Gleicher Deal in jeder Dose: 20 g Protein, 500 mg Elektrolyte, null
-          Zucker. Nur der Geschmack streitet.
+          Gleicher Deal in jeder Dose: 500 mg Elektrolyte, null Zucker. Nur der
+          Geschmack streitet.
         </p>
       </Reveal>
 

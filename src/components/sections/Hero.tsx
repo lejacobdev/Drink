@@ -5,10 +5,9 @@ import BuyButton from "@/components/BuyButton";
 import { flavours } from "@/lib/flavours";
 
 const stats = [
-  { value: "20 g", label: "Protein" },
   { value: "500 mg", label: "Elektrolyte" },
   { value: "0 g", label: "Zucker" },
-  { value: "105", label: "kcal" },
+  { value: "10", label: "kcal" },
 ];
 
 export default function Hero() {
@@ -44,8 +43,8 @@ export default function Hero() {
         </Reveal>
         <Reveal delay={120}>
           <p className="mt-6 max-w-md px-1 text-lg text-kreide/80 md:px-2">
-            Elektrolyte und 20 g Protein, fertig gemixt in der Dose. Kein Pulver,
-            kein Shaker, kein Zucker.
+            Elektrolyte, fertig gemixt in der Dose. Kein Pulver, kein Shaker,
+            kein Zucker.
           </p>
         </Reveal>
 
@@ -66,7 +65,7 @@ export default function Hero() {
 
         {/* Stat-Zeile unten */}
         <Reveal delay={320} className="mt-14 border-t border-white/10 py-6 md:mt-20">
-          <dl className="grid grid-cols-2 gap-6 px-1 sm:grid-cols-4 md:px-2">
+          <dl className="grid grid-cols-3 gap-6 px-1 md:px-2">
             {stats.map((s) => (
               <div key={s.label} className="flex items-baseline gap-2">
                 <dd className="font-display text-2xl text-kreide">{s.value}</dd>

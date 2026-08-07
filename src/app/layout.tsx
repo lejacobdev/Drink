@@ -21,11 +21,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "sodaLYTE – Elektrolyte und Protein in einer Dose",
+    default: "sodaLYTE – Elektrolyte in einer Dose",
     template: "%s – sodaLYTE",
   },
   description:
-    "20 g Protein, 500 mg Elektrolyte, null Zucker. Fertig gemixt in der Slim-Dose. Schmeckt wie ein Drink, wirkt wie ein Plan.",
+    "500 mg Elektrolyte, null Zucker. Fertig gemixt in der Slim-Dose. Schmeckt wie ein Drink, wirkt wie ein Plan.",
 };
 
 export default function RootLayout({

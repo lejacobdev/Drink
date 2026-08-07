@@ -83,7 +83,7 @@ export default function StaticCan({ flavour, className = "" }: Props) {
           font: "600 10px var(--font-body), system-ui, sans-serif",
         }}
       >
-        20 G PROTEIN · 0 G ZUCKER
+        500 MG ELEKTROLYTE · 0 G ZUCKER
       </text>
 
       {/* Wortmarke vertikal */}

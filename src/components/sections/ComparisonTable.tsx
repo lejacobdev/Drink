@@ -5,12 +5,6 @@ type Cell = { kind: "yes" | "no" | "mid"; text: string };
 
 const rows: { label: string; pakt: Cell; shake: Cell; energy: Cell }[] = [
   {
-    label: "Protein",
-    pakt: { kind: "yes", text: "20 g, trinkfertig" },
-    shake: { kind: "mid", text: "20–30 g, erst mixen" },
-    energy: { kind: "no", text: "0 g" },
-  },
-  {
     label: "Elektrolyte",
     pakt: { kind: "yes", text: "Kalium, Magnesium, Natrium" },
     shake: { kind: "no", text: "kaum" },
@@ -24,7 +18,7 @@ const rows: { label: string; pakt: Cell; shake: Cell; energy: Cell }[] = [
   },
   {
     label: "Kalorien pro Portion",
-    pakt: { kind: "yes", text: "105 kcal" },
+    pakt: { kind: "yes", text: "10 kcal" },
     shake: { kind: "mid", text: "150–250 kcal" },
     energy: { kind: "no", text: "ca. 230 kcal" },
   },
